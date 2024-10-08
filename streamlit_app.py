@@ -3,11 +3,11 @@ import replicate
 import os
 
 # App title
-st.set_page_config(page_title="🦙💬 Llama 2 Chatbot")
+st.set_page_config(page_title="ajees Llama 2 Chatbot")
 
 # Replicate Credentials
 with st.sidebar:
-    st.title('🦙💬 Llama 2 Chatbot')
+    st.title('ajees Llama 2 Chatbot')
     st.write('This chatbot is created using the open-source Llama 2 LLM model from Meta.')
     if 'REPLICATE_API_TOKEN' in st.secrets:
         st.success('API key already provided!', icon='✅')
@@ -29,7 +29,7 @@ with st.sidebar:
     temperature = st.sidebar.slider('temperature', min_value=0.01, max_value=1.0, value=0.1, step=0.01)
     top_p = st.sidebar.slider('top_p', min_value=0.01, max_value=1.0, value=0.9, step=0.01)
     max_length = st.sidebar.slider('max_length', min_value=20, max_value=80, value=50, step=5)
-    st.markdown('📖 Learn how to build this app in this [blog](https://blog.streamlit.io/how-to-build-a-llama-2-chatbot/)!')
+    st.markdown('📖 Learn how to build this app in this [blog](https://abdulhajees.in/)!')
 
 # Store LLM generated responses
 if "messages" not in st.session_state.keys():
