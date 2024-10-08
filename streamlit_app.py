@@ -13,7 +13,7 @@ def load_html():
     return html_content
 
 # Display the HTML UI
-components.html(load_html(), height=100)
+components.html(load_html(), height=300)
 
 # Replicate Credentials
 with st.sidebar:
