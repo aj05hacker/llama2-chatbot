@@ -19,7 +19,7 @@ components.html(load_html(), height=300)
 with st.sidebar:
     st.title('Instant Vocabulary Enhancer by Abdul Hajees.')
     st.write('This chatbot is created using the open-source Llama 2 LLM model from Meta.')
-    replicate_api = st.text_input('  ', type='password')
+    replicate_api = st.text_input(' enter your key ', type='password')
     os.environ['REPLICATE_API_TOKEN'] = replicate_api
 
     st.subheader('Models')
