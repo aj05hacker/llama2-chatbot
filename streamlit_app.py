@@ -4,7 +4,7 @@ import replicate
 import streamlit.components.v1 as components
 
 # App title
-st.set_page_config(page_title="🦙💬 Llama Chatbot")
+st.set_page_config(page_title="AH Instant Vocabulary Enhancer")
 
 # Load the HTML file
 def load_html():
@@ -17,9 +17,9 @@ components.html(load_html(), height=300)
 
 # Replicate Credentials
 with st.sidebar:
-    st.title('ajees Llama 2 Chatbot')
+    st.title('Instant Vocabulary Enhancer by Abdul Hajees.')
     st.write('This chatbot is created using the open-source Llama 2 LLM model from Meta.')
-    replicate_api = st.text_input('Enter Replicate API token:', type='password')
+    replicate_api = st.text_input('  ', type='password')
     os.environ['REPLICATE_API_TOKEN'] = replicate_api
 
     st.subheader('Models')
@@ -40,7 +40,7 @@ if "messages" not in st.session_state.keys():
 
 # Function for generating LLaMA2 response
 def generate_llama2_response(prompt_input):
-    string_dialogue = "Act as a english teacher and the user will give you the word or words. you need to give the meaning of that word and alternatives for it.and the responses should be short ans crisp and bullet pointed"
+    string_dialogue = "Act as an English teacher specializing in vocabulary. The user will provide you with a word or phrase, and you will respond with the following, Definition: A brief and clear meaning of the word or phrase, Alternatives: Synonyms or similar expressions that can replace the word or phrase, Your responses should be concise, engaging, and to the point."
     for dict_message in st.session_state.messages:
         if dict_message["role"] == "user":
             string_dialogue += "User: " + dict_message["content"] + "\n\n"
