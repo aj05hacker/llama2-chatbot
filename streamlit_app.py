@@ -40,7 +40,7 @@ if "messages" not in st.session_state.keys():
 
 # Function for generating LLaMA2 response
 def generate_llama2_response(prompt_input):
-    string_dialogue = "Act as a english teacher and the user will give you the word or words. you need to give the meaning of that word and alternatives for it."
+    string_dialogue = "Act as a english teacher and the user will give you the word or words. you need to give the meaning of that word and alternatives for it.and the responses should be short ans crisp and bullet pointed"
     for dict_message in st.session_state.messages:
         if dict_message["role"] == "user":
             string_dialogue += "User: " + dict_message["content"] + "\n\n"
