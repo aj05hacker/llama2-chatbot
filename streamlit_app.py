@@ -4,7 +4,7 @@ import replicate
 import streamlit.components.v1 as components
 
 # App title
-st.set_page_config(page_title="🦙💬 Llama Chatbot")
+st.set_page_config(page_title="🦙💬 Llama Chatbot", layout="wide")
 
 # Load the HTML file
 def load_html():
@@ -13,12 +13,13 @@ def load_html():
     return html_content
 
 # Display the HTML UI
-components.html(load_html(), height=600)
+components.html(load_html(), height=800)  # Set height as needed
 
-# Replicate Credentials
+# Sidebar for Replicate Credentials
 with st.sidebar:
     st.title('ajees Llama 2 Chatbot')
     st.write('This chatbot is created using the open-source Llama 2 LLM model from Meta.')
+    
     replicate_api = st.text_input('Enter Replicate API token:', type='password')
     os.environ['REPLICATE_API_TOKEN'] = replicate_api
 
@@ -51,8 +52,8 @@ def generate_llama2_response(prompt_input):
                                   "temperature": temperature, "top_p": top_p, "max_length": max_length, "repetition_penalty": 1})
     return output
 
-# Handling User Input
-if prompt := st.text_input("Type your message here..."):
+# User Input Handling
+if prompt := st.text_input("Type your message here...", disabled=not replicate_api):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.write(prompt)
