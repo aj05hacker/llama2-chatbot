@@ -36,7 +36,7 @@ with st.sidebar:
 
 # Store LLM generated responses
 if "messages" not in st.session_state.keys():
-    st.session_state.messages = [{"role": "assistant", "content": "Give me a Word"}]
+    st.session_state.messages = [{"role": "assistant", "content": "How may I assist you today?"}]
 
 # Function for generating LLaMA2 response
 def generate_llama2_response(prompt_input):
@@ -52,7 +52,7 @@ def generate_llama2_response(prompt_input):
     return output
 
 # Handling User Input
-if prompt := st.text_input("Type your word here to know more about it."):
+if prompt := st.text_input("Type your word here to know more about"):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.write(prompt)
