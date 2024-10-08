@@ -55,7 +55,7 @@ with st.sidebar:
     st.button('Clear Chat History', on_click=lambda: st.session_state.update({"messages": [{"role": "assistant", "content": "How may I assist you today?"}]}))
     
     # Blog Link
-    st.markdown("<div class='blog-link'>📖 Learn how to build this app in this [blog](https://blog.streamlit.io/how-to-build-a-llama-2-chatbot/)! </div>", unsafe_allow_html=True)
+    st.markdown("<div class='blog-link'>📖 Learn how to build this app in this [blog](https://blogs.abdulhajees.in/)! </div>", unsafe_allow_html=True)
     
     st.markdown("</div>", unsafe_allow_html=True)
 
