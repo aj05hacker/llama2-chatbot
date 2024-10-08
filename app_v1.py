@@ -3,7 +3,7 @@ import replicate
 import os
 
 # App title and configuration
-st.set_page_config(page_title="🦙💬 Llama 2 Chatbot")
+st.set_page_config(page_title="Ajees Llama 2 Chatbot")
 
 # Custom CSS for Sidebar Styling
 sidebar_style = """
